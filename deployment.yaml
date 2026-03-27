@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+  namespace: sampleproject
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      imagePullSecrets:
+        - name: nexus-regcred
+      containers:
+        - name: python-app
+          image: 13.201.170.139:8082/sampleproject:test
+          ports:
+            - containerPort: 5000
