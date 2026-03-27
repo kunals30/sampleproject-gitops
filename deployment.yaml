@@ -17,6 +17,6 @@ spec:
         - name: nexus-regcred
       containers:
         - name: python-app
-          image: 13.201.170.139:8082/sampleproject:test
+          image: 13.201.170.139:8082/sampleproject:build-32
           ports:
             - containerPort: 5000
